@@ -71,6 +71,10 @@ a {
   font-size: 56px;
   line-height: 56px;
 }
+.h3 {
+  font-size: 40px;
+  line-height: 48px;
+}
 
 // header
 .header {
@@ -135,6 +139,7 @@ a {
   box-shadow: 0px 0px 32px 0px #00000014;
   padding: 100px;
   margin-bottom: 100px;
+  text-align: center;
 }
 
 .description-services {
@@ -286,6 +291,64 @@ a {
   background-image: url('../images/business6.png');
 }
 
+.additional-benefits {
+  .wrapper-shadow-block {
+    padding: 80px 78px;
+  }
+
+  &__offset {
+    margin-bottom: 75px;
+    .h2 {
+      margin-bottom: 50px;
+    }
+  }
+  &__programs {
+    margin-top: 70px;
+    .additional-benefits__group {
+      justify-content: center;
+    }
+    .h3 {
+      margin-bottom: 50px;
+      span {
+        color: $color-red;
+      }
+    }
+  }
+}
+
+.additional-benefits__group {
+  display: flex;
+  justify-content: space-between;
+  gap: 17px;
+  .group__item {
+    width: 178px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .group__picture {
+    background-color: rgba(0, 0, 0, 5%);
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .group__title {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+}
+.hr {
+  background: rgba(0, 0, 0, 5%);
+
+  border: 1px solid rgba(0, 0, 0, 5%);
+}
 // media query //
 
 @media all and (max-width: 1000px) {
@@ -318,6 +381,11 @@ a {
       max-width: 100%;
     }
   }
+
+  .additional-benefits__group {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
 
 @media all and (max-width: 768px) {
@@ -329,6 +397,10 @@ a {
   .h2 {
     font-size: 28px;
     line-height: 28px;
+  }
+  .h3 {
+    font-size: 22px;
+    line-height: 26px;
   }
 
   .description-services {
@@ -375,7 +447,7 @@ a {
     }
     &__item {
       height: 60px;
-      transition: all 0s;
+      transition: all 0.5s;
 
       &-info {
         position: relative;
@@ -399,9 +471,10 @@ a {
           }
         }
         span {
-          display: none;
+          position: absolute;
           font-size: 16px;
           line-height: 22px;
+          opacity: 0;
         }
       }
     }
@@ -409,15 +482,58 @@ a {
     .active {
       height: 100%;
 
-      &-info {
+      .business-areas__item-info {
         padding: 20px 10px;
+        justify-content: flex-start;
       }
       p svg {
         transition: all 0.3s;
         transform: rotate(180deg);
       }
       span {
-        display: inline-block;
+        position: relative;
+        opacity: 1;
+      }
+    }
+  }
+
+  .additional-benefits {
+    .wrapper-shadow-block {
+      padding: 24px 5px;
+    }
+
+    &__offset {
+      margin-bottom: 24px;
+      .h2 {
+        margin-bottom: 40px;
+      }
+    }
+
+    &__programs {
+      margin-top: 24px;
+      .h3 {
+        margin-bottom: 24px;
+      }
+    }
+  }
+
+  .additional-benefits__group {
+    gap: 10px;
+    row-gap: 25px;
+    .group__item {
+      width: 120px;
+    }
+
+    .group__title {
+      font-size: 16px;
+      line-height: 17px;
+    }
+    .group__picture {
+      width: 80px;
+      height: 80px;
+      img {
+        width: 50%;
+        height: 50%;
       }
     }
   }
