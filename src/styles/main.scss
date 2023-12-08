@@ -285,6 +285,7 @@ a {
 .business-areas__item6 {
   background-image: url('../images/business6.png');
 }
+
 // media query //
 
 @media all and (max-width: 1000px) {
@@ -320,6 +321,11 @@ a {
 }
 
 @media all and (max-width: 768px) {
+  .header {
+    &__logo {
+      margin-bottom: 16px;
+    }
+  }
   .h2 {
     font-size: 28px;
     line-height: 28px;
@@ -369,7 +375,7 @@ a {
     }
     &__item {
       height: 60px;
-      transition: all 0.5s;
+      transition: all 0s;
 
       &-info {
         position: relative;
@@ -378,6 +384,7 @@ a {
         flex-direction: column;
         justify-content: center;
         padding: 20px 10px;
+
         p {
           font-size: 20px;
           line-height: 20px;
@@ -388,6 +395,7 @@ a {
           svg {
             display: block;
             min-width: 16px;
+            transition: all 0.3s;
           }
         }
         span {
@@ -396,17 +404,20 @@ a {
           line-height: 22px;
         }
       }
+    }
 
-      &:hover {
-        height: auto;
-        transition: all 0.5s;
+    .active {
+      height: 100%;
 
-        &-info {
-          padding: 20px 10px;
-        }
-        span {
-          display: inline-block;
-        }
+      &-info {
+        padding: 20px 10px;
+      }
+      p svg {
+        transition: all 0.3s;
+        transform: rotate(180deg);
+      }
+      span {
+        display: inline-block;
       }
     }
   }
