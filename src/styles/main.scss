@@ -1,9 +1,11 @@
 $text-color: #444444;
 $color-red: #b01736;
 $color-red-light: #d43152;
-$white-color: #ffffff;
+$color-white: #ffffff;
+$color-gray: rgba(0, 0, 0, 5%);
 $bg-dark: rgba(45, 54, 83, 0.6);
 $index: calc(1vw + 1vh);
+@import './slider.scss';
 
 * {
   padding: 0;
@@ -58,7 +60,7 @@ a {
   text-align: left;
   border: none;
   outline: none;
-  color: $white-color;
+  color: $color-white;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s;
@@ -187,7 +189,7 @@ a {
   justify-content: center;
   background-color: #a30c33;
   padding: 0 67px;
-  color: $white-color;
+  color: $color-white;
   margin-bottom: 100px;
   &__leftImg {
     position: absolute;
@@ -239,7 +241,7 @@ a {
     max-width: 615px;
     height: 260px;
     overflow: hidden;
-    color: $white-color;
+    color: $color-white;
     transition: all 0.5s;
 
     &-info {
@@ -329,7 +331,7 @@ a {
   }
 
   .group__picture {
-    background-color: rgba(0, 0, 0, 5%);
+    background-color: $color-gray;
     width: 110px;
     height: 110px;
     border-radius: 50%;
@@ -349,6 +351,7 @@ a {
 
   border: 1px solid rgba(0, 0, 0, 5%);
 }
+
 // media query //
 
 @media all and (max-width: 1000px) {
