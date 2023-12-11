@@ -355,32 +355,27 @@ ul {
   border: 1px solid rgba(0, 0, 0, 5%);
 }
 
-.map {
-  .wrapper-shadow-block {
-    max-width: 100%;
-    padding: 30px 70px;
-  }
-}
-
 .select {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 100;
+  flex-wrap: wrap;
+  gap: 20px;
   background-color: $color-white;
   margin-bottom: 90px;
+  padding: 28px 70px;
 
-  p {
-    font-size: 24px;
-    line-height: 24px;
-  }
   &__label {
     width: max-content;
     display: flex;
     align-items: center;
     gap: 16px;
     cursor: pointer;
+    p {
+      font-size: 24px;
+      line-height: 24px;
+    }
   }
   &__arrow {
     transition: all 0.5s;
@@ -415,6 +410,31 @@ ul {
 
 .map {
   position: relative;
+  margin-bottom: 100px;
+  .wrapper-shadow-block {
+    max-width: 100%;
+  }
+  &__capture {
+    width: 1190px;
+    margin: 0 auto;
+    position: relative;
+  }
+  &__marker {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    font-size: 12px;
+    line-height: 12px;
+    &-circle {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #444444;
+    }
+  }
 }
 
 .drop-down-wrapper {
@@ -429,6 +449,7 @@ ul {
   opacity: 0;
   z-index: 10;
   pointer-events: none;
+  margin: 0;
   .column-region {
     display: flex;
     flex-direction: column;
@@ -437,8 +458,12 @@ ul {
     font-size: 18px;
     line-height: 20px;
     font-weight: 400;
+
     &__main {
       font-weight: 600;
+      svg {
+        display: none;
+      }
     }
   }
 }
@@ -446,9 +471,29 @@ ul {
 .show {
   opacity: 1;
   top: 100px;
+  pointer-events: all;
 }
 
 // media query //
+@media all and (max-width: 1190px) {
+  .map {
+    overflow-x: auto;
+  }
+
+  .select {
+    margin-top: 20px;
+  }
+
+  .show {
+    top: 130px;
+  }
+}
+
+@media all and (max-width: 1080px) {
+  .select {
+    padding: 28px 18px;
+  }
+}
 
 @media all and (max-width: 1000px) {
   .container {
@@ -485,6 +530,18 @@ ul {
     justify-content: center;
     flex-wrap: wrap;
   }
+
+  .drop-down-wrapper {
+    width: 100%;
+    gap: 10px;
+    grid-template-columns: repeat(5, 1fr);
+    box-shadow: 0px 24px 32px 0px #00000014;
+    padding: 28px 18px;
+  }
+
+  .show {
+    top: 75px;
+  }
 }
 
 @media all and (max-width: 768px) {
@@ -503,7 +560,10 @@ ul {
   }
 
   .description-services {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+    .wrapper-shadow-block {
+      padding: 50px;
+    }
   }
 
   .wrapper-text-block {
@@ -636,6 +696,39 @@ ul {
       }
     }
   }
+
+  .map {
+    margin-bottom: 50px;
+  }
+
+  .select {
+    padding: 18px 5px;
+    &__label {
+      p {
+        font-size: 20px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  .drop-down-wrapper {
+    padding: 18px 5px;
+  }
+  .active-nav::after {
+    bottom: -21px;
+  }
+  .region-nav {
+    min-width: 518px;
+    gap: 16px;
+    li {
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+
+  .show {
+    top: 60px;
+  }
 }
 
 @media all and (max-width: 524px) {
@@ -671,10 +764,13 @@ ul {
     line-height: 16px;
   }
 
-  .wrapper-shadow-block {
-    padding: 24px 5px;
-    margin-bottom: 50px;
+  .description-services {
+    .wrapper-shadow-block {
+      margin-bottom: 50px;
+      padding: 24px 5px;
+    }
   }
+
   .description-services__title {
     font-size: 16px;
     line-height: 20px;
@@ -699,6 +795,68 @@ ul {
         margin: 0 auto;
       }
     }
+  }
+
+  .additional-benefits {
+    .wrapper-shadow-block {
+      margin-bottom: 50px;
+    }
+  }
+
+  .drop-down-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 5px;
+    gap: 5px;
+    row-gap: 15px;
+    padding-bottom: 19px;
+    .column-region {
+      width: max-content;
+
+      font-size: 14px;
+      line-height: 14px;
+
+      &__main {
+        display: flex !important;
+        width: max-content !important;
+        align-items: center;
+        gap: 5px;
+        svg {
+          display: block;
+        }
+      }
+      li {
+        display: none;
+      }
+    }
+    .active {
+      li {
+        display: block;
+        width: min-content;
+      }
+    }
+  }
+
+  .select {
+    min-width: max-content;
+    display: block;
+    padding: 21px 5px;
+    margin-bottom: 8px;
+    &__label {
+      margin-bottom: 20px;
+    }
+  }
+
+  .map__capture {
+    width: 862px;
+    height: 446px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .show {
+    top: 70px;
   }
 }
 
