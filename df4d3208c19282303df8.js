@@ -1,0 +1,1 @@
+jQuery(document).ready((function(i){i(".slider").slick({infinite:!0,arrows:!1,dots:!0,responsive:[{breakpoint:524,settings:{dots:!1,arrows:!1}}]}),i(".next").on("click",(function(){i(".slider").slick("slickNext")})),i(".prev").on("click",(function(){i(".slider").slick("slickPrev")}))}));
