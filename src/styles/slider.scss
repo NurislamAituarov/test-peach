@@ -74,6 +74,12 @@
   }
 }
 
+@media all and (max-width: 1125px) {
+  .wrapper__slider {
+    padding: 0 15px;
+  }
+}
+
 @media all and (max-width: 768px) {
   .wrapper__slider {
     padding: 0 5px;
